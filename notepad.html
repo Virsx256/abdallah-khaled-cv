@@ -6,11 +6,78 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <style>
-    body { font-family: sans-serif; background: #f0f0f0; padding: 20px; direction: rtl; }
-    #login, #main { max-width: 500px; margin: auto; }
-    textarea { width: 100%; height: 100px; margin-top: 10px; }
-    .note { background: white; margin: 10px 0; padding: 10px; border: 1px solid #ccc; position: relative; }
-    .note button { position: absolute; top: 5px; left: 5px; }
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to right, #f2f2f2, #e6f0ff);
+      padding: 40px;
+      margin: 0;
+      direction: rtl;
+    }
+
+    #login, #main {
+      max-width: 600px;
+      background: white;
+      padding: 30px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="password"], textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background-color: #fafafa;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .note {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .note button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #dc3545;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+
+    #noteInput {
+      min-height: 120px;
+    }
   </style>
 </head>
 <body>
@@ -29,7 +96,6 @@
 </div>
 
 <script>
-  // Firebase Config
   const firebaseConfig = {
     apiKey: "AIzaSyDQNmJWUmrxDfH6myYoiQZObjShM1Q1f_M",
     authDomain: "abdallah-1c4d0.firebaseapp.com",
@@ -43,7 +109,7 @@
   firebase.initializeApp(firebaseConfig);
 
   const db = firebase.database();
-  const PASSWORD = "2567849"; // غيّرها لكلمة سر أقوى
+  const PASSWORD = "2567849";
 
   function checkPassword() {
     const entered = document.getElementById("password").value;
@@ -57,7 +123,7 @@
   }
 
   function saveNote() {
-    const text = document.getElementById("noteInput").value;
+    const text = document.getElementById("noteInput").value.trim();
     if (!text) return;
     const noteRef = db.ref("notes").push();
     noteRef.set({
@@ -93,4 +159,4 @@
 </script>
 
 </body>
-  </html>
+</html>
