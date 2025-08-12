@@ -4,37 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="المطور عبدالله خالد - مبرمج تطبيقات أندرويد وهكر أخلاقي وباحث أمني من أسيوط، مصر. خبرة قوية في HTML, CSS, JS, PHP, MySQL.">
-  <meta name="keywords" content="عبدالله خالد, مبرمج أندرويد, هكر أخلاقي, باحث أمني, Android Developer, Ethical Hacker, أسيوط, مصر">
+  <meta name="keywords" content="عبدالله خالد, مبرمج أندرويد, هكر أخلاقي, باحث أمني, Android Developer, Ethical Hacker, أسيوط, مصر, برمجة, تطوير تطبيقات, تصميم مواقع, جرافيك, مونتاج, أمن سيبراني, خدمات تقنية, تصميم تطبيقات, تطوير ويب, مشاريع برمجية, برمجة تطبيقات أندرويد, صيانة تطبيقات, UI, UX, تصميم احترافي, برامج, تقنيات حديثة, حلول برمجية, تطبيقات موبايل, تسويق الكتروني, برمجة خاصة, فريلانسر, مشاريع ويب, تطبيقات ذكية, تطوير أعمال">
   <meta name="author" content="عبدالله خالد">
   <meta property="og:title" content="عبدالله خالد - مطور وهكر أخلاقي">
   <meta property="og:description" content="سيرة ذاتية احترافية للمبرمج عبدالله خالد من أسيوط، مصر. خبرات في مجالات البرمجة والأمن السيبراني.">
   <meta property="og:image" content="abdallah.jpg">
   <meta property="og:type" content="website">
   <title>عبدالله خالد | مطور وهكر أخلاقي</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Tajawal', sans-serif;
+      background: url('tech-bg.jpg') no-repeat center center/cover;
       color: #f5f6fa;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: -1;
     }
     header {
-      background: transparent;
       text-align: center;
       padding: 60px 20px 30px;
+      animation: fadeDown 1s ease forwards;
     }
     header img {
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid #00cec9;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      border: 5px solid #00f5ff;
+      box-shadow: 0 0 20px #00f5ff, 0 0 40px #00f5ff, 0 0 60px rgba(0,245,255,0.6);
+      animation: glow 3s infinite alternate;
     }
     h1 {
-      font-size: 32px;
+      font-size: 36px;
       margin: 20px 0 5px;
+      text-shadow: 0 0 15px #00f5ff;
     }
     h2 {
       font-size: 20px;
@@ -47,17 +60,24 @@
       padding: 20px;
     }
     section {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.07);
       border-radius: 16px;
       padding: 25px;
       margin-bottom: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
       backdrop-filter: blur(10px);
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
     }
+    section:nth-child(1) { animation-delay: 0.3s; }
+    section:nth-child(2) { animation-delay: 0.6s; }
+    section:nth-child(3) { animation-delay: 0.9s; }
     section h3 {
       margin-top: 0;
-      color: #00cec9;
+      color: #00f5ff;
       font-size: 22px;
+      text-shadow: 0 0 10px #00f5ff;
     }
     .skills ul {
       list-style: none;
@@ -67,29 +87,60 @@
       gap: 10px;
     }
     .skills li {
-      background: #00cec9;
-      color: #2d3436;
+      background: #00f5ff;
+      color: #000;
       padding: 10px 18px;
       border-radius: 20px;
       font-weight: bold;
       font-size: 14px;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .skills li:hover {
       transform: scale(1.1);
+      box-shadow: 0 0 15px #00f5ff;
     }
-    a {
-      color: #81ecec;
-      text-decoration: none;
+    .btns {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
-    a:hover {
-      text-decoration: underline;
+    button {
+      background: transparent;
+      border: 2px solid #00f5ff;
+      color: #00f5ff;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #00f5ff;
+      color: #000;
+      box-shadow: 0 0 15px #00f5ff;
+      transform: scale(1.05);
+    }
+    .small-btn {
+      font-size: 12px;
+      padding: 6px 14px;
     }
     footer {
       text-align: center;
       padding: 20px;
       font-size: 14px;
       color: #b2bec3;
+      margin-top: 20px;
+    }
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 20px #00f5ff, 0 0 40px #00f5ff; }
+      to { box-shadow: 0 0 30px #00f5ff, 0 0 60px rgba(0,245,255,0.8); }
     }
   </style>
 </head>
@@ -125,16 +176,15 @@
       <p>البريد الإلكتروني: <a href="mailto:reader.abdallah.khaled@gmail.com">reader.abdallah.khaled@gmail.com</a></p>
       <p>رقم الهاتف: <a href="tel:+201141284135">+20 114 128 4135</a></p>
       <p>الموقع: أسيوط، مصر</p>
-      <button onclick="window.location.href='notepad.html'">افتح الحافظة</button>
+      <div class="btns">
+        <button class="small-btn" onclick="window.location.href='notepad.html'">افتح الحافظة</button>
+        <button onclick="window.location.href='portfolio.html'">معرض الأعمال</button>
+      </div>
     </section>
   </main>
 
   <footer>
     &copy; 2025 عبدالله خالد - جميع الحقوق محفوظة
   </footer>
-
-  <script>
-    console.log("مرحبًا بك في الموقع الشخصي لعبدالله خالد!");
-  </script>
 </body>
-</html>
+    </html>
