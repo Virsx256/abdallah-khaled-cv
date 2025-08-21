@@ -71,6 +71,45 @@
     0% { box-shadow: 0 0 20px rgba(138,43,226,0.4); }
     100% { box-shadow: 0 0 40px rgba(0,255,255,0.8); }
   }
+  /* قسم اطلب خدمتك */
+  .contact-section {
+    margin-top: 60px;
+    text-align: center;
+  }
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+  .contact-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 20px rgba(0,255,255,0.6);
+  }
+  .whatsapp {
+    background: #25d366;
+  }
+  .report {
+    background: #ff9800;
+  }
+  .contact-btn img {
+    width: 24px;
+    height: 24px;
+  }
 </style>
 </head>
 <body>
@@ -91,7 +130,21 @@
         <h2>خدمات أخرى</h2>
       </div>
     </div>
+
+    <!-- قسم اطلب خدمتك -->
+    <div class="contact-section">
+      <h2>اطلب خدمتك</h2>
+      <div class="contact-buttons">
+        <a href="https://wa.me/+201141284135" target="_blank" class="contact-btn whatsapp">
+          <img src="whatsapp.png" alt="WhatsApp"> تواصل عبر واتساب
+        </a>
+        <a href="report.html" class="contact-btn report">
+          <img src="form.png" alt="Form"> أرسل طلبك
+        </a>
+      </div>
+    </div>
   </div>
+
 <script>
   function goTo(page){
     document.body.style.opacity = 0;
