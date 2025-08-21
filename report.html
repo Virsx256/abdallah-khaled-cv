@@ -13,24 +13,27 @@
     font-family: 'Tajawal', sans-serif;
     color: #fff;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
     animation: fadeIn 1.5s ease-in-out;
   }
   h1 {
-    margin-bottom: 30px;
-    font-size: 2rem;
+    margin-bottom: 25px;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    text-align: center;
     text-shadow: 0 0 10px rgba(0,255,255,0.6);
   }
   .form-card {
     background: rgba(255,255,255,0.08);
     border-radius: 20px;
-    padding: 30px;
-    width: 350px;
+    padding: 25px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0,255,255,0.4);
   }
@@ -60,14 +63,14 @@
   }
   textarea {
     resize: none;
-    height: 120px;
+    min-height: 120px;
   }
   button {
     width: 100%;
     padding: 15px;
     border-radius: 12px;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
     background: rgba(0,255,255,0.3);
@@ -75,12 +78,23 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   button:hover {
-    transform: translateY(-5px) scale(1.03);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 0 0 20px rgba(0,255,255,0.8);
   }
   @keyframes fadeIn {
     from {opacity: 0; transform: translateY(20px);}
     to {opacity: 1; transform: translateY(0);}
+  }
+  /* موبايل */
+  @media (max-width: 480px) {
+    .form-card {
+      padding: 20px;
+      border-radius: 15px;
+    }
+    button {
+      font-size: 1rem;
+      padding: 12px;
+    }
   }
 </style>
 </head>
